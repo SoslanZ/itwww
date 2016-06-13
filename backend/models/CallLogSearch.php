@@ -81,7 +81,7 @@ class CallLogSearch extends Model
         $callsQuery->andFilterWhere(['ci.queue_num' => $this->queue_num]);*/
         
         $callsQuery->andFilterWhere(['like','ci.queue_num', $this->queue_num]);
-        $callsQuery->andFilterWhere(['like','ci.cid', $this->main_cid]);
+        $callsQuery->andFilterWhere(['like','c.cid', $this->main_cid]);
         $callsQuery->andFilterWhere(['like','c.date_call', $this->date_call ]);
         $callsQuery->andFilterWhere(['like','c.did', $this->main_did ]);
         $callsQuery->andFilterWhere(['like','ci.did', $this->did ]);

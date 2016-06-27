@@ -34,7 +34,8 @@ $file = $rec_path."/".$recfile_name;
 if (file_exists($file)) {
 
 	header('Content-Description: File Transfer');
-	header('Content-Type: application/octet-stream');
+	//header('Content-Type: application/octet-stream');
+	header('Content-Type: audio/mpeg');
 	header('Content-Disposition: attachment; filename='.basename($file));
 	header('Content-Transfer-Encoding: binary');
 	header('Expires: 0');
@@ -51,7 +52,8 @@ $file = str_replace('.wav','.mp3',$file);
 if (file_exists($file)) {
 
         header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
+	//header('Content-Type: application/octet-stream');
+	header('Content-Type: audio/mpeg');
         header('Content-Disposition: attachment; filename='.basename($file));
         header('Content-Transfer-Encoding: binary');
         header('Expires: 0');

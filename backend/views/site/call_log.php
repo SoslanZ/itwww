@@ -69,7 +69,7 @@ $this->title = 'Журнал вызовов центра звонков';
                                 'content' => function ($model, $key, $index, $column){
                                     if ( in_array( $model['dial_status'] , ['ANSWER','CHANUNAVAIL']) ) {
 
-                                        return '<audio controls>'
+                                        return '<audio controls style="width: 115px !important;">'
                                                 . '<source src="/itwww/asterisk/get_rec.php?rec='.
                                                 $model['uid'].'" type="audio/mpeg">'.
                                                 '</audio>';

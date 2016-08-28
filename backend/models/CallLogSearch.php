@@ -50,7 +50,8 @@ class CallLogSearch extends Model
                 ->from('log_calls c')
                 ->leftJoin('log_calls_details ci','c.guid = ci.guid')
                 ->leftJoin('ref_commons ref','ref.addition = ci.dial_status and ref.common = \'DIALSTATUS\' ')
-                ->leftJoin('ref_operators o','ci.operator_id = o.operator_id');
+                ->leftJoin('ref_operators o','ci.operator_id = o.operator_id')
+                ->orderBy('c.date_call desc, ci.date_call desc');
         
         $dataProvider = new ActiveDataProvider([
             'query' => $callsQuery,
@@ -64,10 +65,10 @@ class CallLogSearch extends Model
                                 //'main_cid',
                                 //'main_did',
                                 ],
-                            'defaultOrder' => [
+                            /*'defaultOrder' => [
                                 'date_call' => SORT_DESC,
                                 
-                                ]
+                                ]*/
                             ],
         ]);
 

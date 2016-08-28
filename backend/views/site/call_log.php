@@ -64,6 +64,20 @@ $this->title = 'Журнал вызовов центра звонков';
                                         ]
                                 ),
                                 ],
+                            [
+                                'label' => '',
+                                'content' => function ($model, $key, $index, $column){
+                                    if ( in_array( $model['dial_status'] , ['ANSWER','CHANUNAVAIL']) ) {
+
+                                        return '<audio controls>'
+                                                . '<source src="/itwww/asterisk/get_rec.php?rec='.
+                                                $model['uid'].'" type="audio/mpeg">'.
+                                                '</audio>';
+                                        ;
+                                    }
+                                },
+                                
+                            ],
                             [   'attribute' => 'uid',
                                 'content' => function ($model, $key, $index, $column){
                                     if ( in_array( $model['dial_status'] , ['ANSWER','CHANUNAVAIL']) ) {

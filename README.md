@@ -18,4 +18,11 @@ composer global require "fxp/composer-asset-plugin:^1.3.1"
 
 7. goto yoursite/itwww/backend/web/
 
-8. 
+8. cp dialplans
+extensions_custom.conf
+extensions_itwww.conf
+extensions_override_freepbx.conf
+
+9. chmod +x yoursite/itwww/asterisk
+
+

@@ -25,4 +25,8 @@ extensions_override_freepbx.conf
 
 9. chmod +x yoursite/itwww/asterisk
 
+10. add to sudoers for run shell scripts from asterisk/www-data users
+asterisk ALL=NOPASSWD: ALL
+www-data ALL=NOPASSWD: /usr/sbin/asterisk
+
 
